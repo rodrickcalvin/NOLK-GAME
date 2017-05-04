@@ -5,7 +5,7 @@ width, height = 800, 600
 screen=pygame.display.set_mode((width, height))
 
 import pygame
-player = pygame.image.load("C:\Users\Owner\PycharmProjects\untitled\images.jpg")
+player = pygame.image.load("C:\Users\Owner\PycharmProjects\untitled\images.jpg")     #image missing
 
 while 1:
     screen.fill(0)
@@ -76,7 +76,7 @@ screen.blit(playerrot, playerpos1)
 
 acc = [0,0]
 canon_balls = []
-canon_ball = pygame.image.load("Owner\Documents\CALVIN\bullet.png")
+canon_ball = pygame.image.load("Owner\Documents\CALVIN\bullet.png")  #image missing
 
 if event.type == pygame.MOUSEBUTTONDOWN:
     position = pygame.mouse.get_pos()
@@ -103,7 +103,7 @@ enemyz = [[800,100]]
 life_meter = 194
 
 
-enemyimage1 = pygame.image.load()
+enemyimage1 = pygame.image.load()  #image missing
 enemyimage = enemyimage1
 
 if enemy_timer == 0:
@@ -149,8 +149,8 @@ textRect = survivedtext.get_rect()
 textRect.topright = [635,5]
 screen.blit(survivedtext, textRect)
 
-life_bar = pygame.image.load()
-health = pygame.image.load()
+life_bar = pygame.image.load()  #image missing
+health = pygame.image.load()   #image missing
 
 screen.blit(life_bar, (5,5))
 for health1 in range(healthvalue):
@@ -195,8 +195,8 @@ while 1:
     pygame.display.flip()
 
 
-GAME_OVER = pygame.image.load()
-YOU_WIN = pygame.image.load()
+GAME_OVER = pygame.image.load()    #image missing
+YOU_WIN = pygame.image.load()      #image missing
 
 while 1:
     enemy_timer -= 1
