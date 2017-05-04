@@ -1,11 +1,11 @@
 import pygame   # import the module to enable you to make the game
 
-pygame.init()   #initialise the function
+pygame.init()   # initialise the function
 width, height = 800, 600
 screen=pygame.display.set_mode((width, height))
 
 import pygame
-player = pygame.image.load("C:\Users\Owner\PycharmProjects\untitled\images.jpg")     #image missing
+player = pygame.image.load("data/canon_ball.jpg")     # image is in data folder
 
 while 1:
     screen.fill(0)
@@ -67,7 +67,7 @@ elif keys[2]:
 
 import math
 
-position = pygame.mouse.get_pos()      #Set player position and rotation
+position = pygame.mouse.get_pos()      # Set player position and rotation
 angle = math.atan2(position[1] - (playerpos[1]+32),position[0] - (playerpos[0]+26))
 playerrot = pygame.transform.rotate(player, 360-angle*57.29)
 playerpos1 = (playerpos[0] - playerrot.get_rect().width/2, playerpos[1] - playerrot.get_rect().height/2)
@@ -76,7 +76,7 @@ screen.blit(playerrot, playerpos1)
 
 acc = [0,0]
 canon_balls = []
-canon_ball = pygame.image.load("Owner\Documents\CALVIN\bullet.png")  #image missing
+canon_ball = pygame.image.load("data/bullet.png")  # image is in data folder
 
 if event.type == pygame.MOUSEBUTTONDOWN:
     position = pygame.mouse.get_pos()
@@ -129,7 +129,7 @@ badrect.left = enemy[0]
 if badrect.left < 64:
     life_level -= random.randint(5,20)
 
-#reinenforcements
+# reinenforcements
 index1 = 0
 for bullet in canon_balls:
     ballrect = pygame.Rect(canon_ball.get_rect())
@@ -149,8 +149,8 @@ textRect = survivedtext.get_rect()
 textRect.topright = [635,5]
 screen.blit(survivedtext, textRect)
 
-life_bar = pygame.image.load()  #image missing
-health = pygame.image.load()   #image missing
+life_bar = pygame.image.load()  # image missing
+health = pygame.image.load()   # image missing
 
 screen.blit(life_bar, (5,5))
 for health1 in range(healthvalue):
