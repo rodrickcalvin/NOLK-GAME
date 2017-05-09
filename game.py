@@ -1,15 +1,19 @@
+
+
 import pygame   # import the module to enable you to make the game
 
-pygame.init()   # initialise the function
+
+pygame.init()   #initialise the function
 width, height = 800, 600
 screen=pygame.display.set_mode((width, height))
 
 import pygame
-player = pygame.image.load("data/canon_ball.jpg")     # image is in data folder
+file_name = "C:/Users/Owner/PycharmProjects/untitled/images.jpg"
+player = pygame.image.load(file_name)
 
 while 1:
     screen.fill(0)
-    screen.blit(player, (100,100))
+    screen.blit(player, playerpos)
     pygame.display.flip()
 
     for event in pygame.event.get():
@@ -18,12 +22,15 @@ while 1:
             pygame.quit()
             exit(0)
 
-grass = pygame.image.load("")
-castle = pygame.image.load("")
+file_name2 = "C:/Users/Owner/PycharmProjects/untitled/Battlefield.jpg"
+battle_field = pygame.image.load(file_name2)
 
-for x in range(width/grass.get_width()+1):
-    for y in range(height/grass.get_height()+1):             \
-    screen.blit(grass , (x*100, y*100))
+file_name3 = "C:/Users/Owner/PycharmProjects/untitled/castle.png"
+castle = pygame.image.load(file_name3)
+
+for x in range(width/battle_field.get_width()+1):
+    for y in range(height/battle_field.get_height()+1):             \
+    screen.blit(battle_field , (x*100, y*100))
     screen.blit(castle , (0 , 30))
     screen.blit(castle , (0 , 135))
     screen.blit(castle , (0 , 240))
@@ -67,7 +74,7 @@ elif keys[2]:
 
 import math
 
-position = pygame.mouse.get_pos()      # Set player position and rotation
+position = pygame.mouse.get_pos()      #Set player position and rotation
 angle = math.atan2(position[1] - (playerpos[1]+32),position[0] - (playerpos[0]+26))
 playerrot = pygame.transform.rotate(player, 360-angle*57.29)
 playerpos1 = (playerpos[0] - playerrot.get_rect().width/2, playerpos[1] - playerrot.get_rect().height/2)
@@ -76,7 +83,9 @@ screen.blit(playerrot, playerpos1)
 
 acc = [0,0]
 canon_balls = []
-canon_ball = pygame.image.load("data/bullet.png")  # image is in data folder
+
+file_name4 = "C:/Users/Owner/PycharmProjects/untitled/bullet.png"
+canon_ball = pygame.image.load(file_name4)
 
 if event.type == pygame.MOUSEBUTTONDOWN:
     position = pygame.mouse.get_pos()
@@ -102,8 +111,8 @@ enemy_timer1 = 0
 enemyz = [[800,100]]
 life_meter = 194
 
-
-enemyimage1 = pygame.image.load()  #image missing
+file_name5 = "C:/Users/Owner/PycharmProjects/untitled/badguy.png"
+enemyimage1 = pygame.image.load(file_name5)
 enemyimage = enemyimage1
 
 if enemy_timer == 0:
@@ -129,7 +138,7 @@ badrect.left = enemy[0]
 if badrect.left < 64:
     life_level -= random.randint(5,20)
 
-# reinenforcements
+#reinenforcements
 index1 = 0
 for bullet in canon_balls:
     ballrect = pygame.Rect(canon_ball.get_rect())
@@ -149,8 +158,11 @@ textRect = survivedtext.get_rect()
 textRect.topright = [635,5]
 screen.blit(survivedtext, textRect)
 
-life_bar = pygame.image.load()  # image missing
-health = pygame.image.load()   # image missing
+file_name6 = "C:/Users/Owner/PycharmProjects/untitled/health.png"
+life_bar = pygame.image.load(file_name6)
+
+file_name7 = "C:/Users/Owner/Documents/CALVIN/resources/images/healthbar.png"
+health = pygame.image.load(file_name7)
 
 screen.blit(life_bar, (5,5))
 for health1 in range(healthvalue):
@@ -194,9 +206,12 @@ while 1:
             exit(0)
     pygame.display.flip()
 
+file_name8 = "C:/Users/Owner/Documents/CALVIN/resources/images/gameover.png"
+GAME_OVER = pygame.image.load(file_name8)
 
-GAME_OVER = pygame.image.load()    #image missing
-YOU_WIN = pygame.image.load()      #image missing
+file_name9 = "C:/Users/Owner/Documents/CALVIN/resources/images/youwin.png"
+YOU_WIN = pygame.image.load(file_name9)
+
 
 while 1:
     enemy_timer -= 1
