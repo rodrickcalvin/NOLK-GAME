@@ -8,7 +8,7 @@ width, height = 800, 600
 screen=pygame.display.set_mode((width, height))
 
 import pygame
-file_name = "C:/Users/Owner/PycharmProjects/untitled/images.jpg"
+file_name = "NOLK-GAME/data/images.jpg"
 player = pygame.image.load(file_name)
 
 while 1:
@@ -22,10 +22,10 @@ while 1:
             pygame.quit()
             exit(0)
 
-file_name2 = "C:/Users/Owner/PycharmProjects/untitled/Battlefield.jpg"
+file_name2 = "NOLK-GAME/data/Battlefield.jpg"
 battle_field = pygame.image.load(file_name2)
 
-file_name3 = "C:/Users/Owner/PycharmProjects/untitled/castle.png"
+file_name3 = "NOLK-GAME/data/castle.png"
 castle = pygame.image.load(file_name3)
 
 for x in range(width/battle_field.get_width()+1):
@@ -84,7 +84,7 @@ screen.blit(playerrot, playerpos1)
 acc = [0,0]
 canon_balls = []
 
-file_name4 = "C:/Users/Owner/PycharmProjects/untitled/bullet.png"
+file_name4 = "NOLK-GAME/data/bullet.png"
 canon_ball = pygame.image.load(file_name4)
 
 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -111,7 +111,7 @@ enemy_timer1 = 0
 enemyz = [[800,100]]
 life_meter = 194
 
-file_name5 = "C:/Users/Owner/PycharmProjects/untitled/badguy.png"
+file_name5 = "NOLK-GAME/data/badguy.png"
 enemyimage1 = pygame.image.load(file_name5)
 enemyimage = enemyimage1
 
