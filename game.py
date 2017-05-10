@@ -63,7 +63,7 @@ if event.type == pygame.KEYUP:
         keys[3] = False
 
 
-if keys[0]:   # player movement
+if keys[0]:   # This is now the player movement.....
     playerpos[1] -= 5
 elif keys[2]:
     playerpos[1] += 5
@@ -74,7 +74,7 @@ elif keys[2]:
 
 import math
 
-position = pygame.mouse.get_pos()      #Set player position and rotation
+position = pygame.mouse.get_pos()      #Setting the player position and rotation
 angle = math.atan2(position[1] - (playerpos[1]+32),position[0] - (playerpos[0]+26))
 playerrot = pygame.transform.rotate(player, 360-angle*57.29)
 playerpos1 = (playerpos[0] - playerrot.get_rect().width/2, playerpos[1] - playerrot.get_rect().height/2)
@@ -105,7 +105,7 @@ for bullet in canon_ballss:
         canon_ball1 = pygame.transform.rotate(canon_ball, 360-projectile[0]*57.29)
         screen.blit(canon_ball1, (projectile[1], projectile[2]))
 
-# insert the enemy into the game
+# Here we insert the enemy into the game...
 enemy_timer = 100
 enemy_timer1 = 0
 enemyz = [[800,100]]
@@ -131,7 +131,7 @@ for enemy in enemyz:
 for enemy in enemyz:
     screen.blit(enemyimage, enemy)
 
-# enemy attack
+# enemy attack.
 badrect = pygame.Rect(enemyimage.get_rect())
 badrect.top = badguy[1]
 badrect.left = enemy[0]
