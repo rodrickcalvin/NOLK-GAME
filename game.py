@@ -125,3 +125,86 @@ while running:
         screen.blit(healthbar, (5,5))
         for health1 in range(healthvalue):
             screen.blit(health, (health1+8,8))
+ #7  update the screen
+    pygame.display.flip()
+
+    #8  loop through the events
+    for event in pygame.event.get():
+
+        if event.type==pygame.QUIT:
+            pygame.quit()
+            exit(0)
+            # Making the character move vertically and horizontally
+        if event.type == pygame.KEYDOWN:
+           if event.key == K_w:
+               keys[0] = True
+           elif event.key == K_a:
+               keys[1] = True
+           elif event.key == K_s:
+               keys[2] = True
+           elif event.key == K_d:
+               keys[3] = True
+
+
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_w:
+                 keys[0] = False
+            elif event.key == pygame.K_a:
+                 keys[1] = False
+            elif event.key == pygame.K_s:
+                 keys[2] = False
+            elif event.key == pygame.K_d:
+                 keys[3] = False
+        
+        if keys[0]:   # This is now the player movement.....
+             playerpos[1] -= 10
+        elif keys[2]:
+             playerpos[1] += 10
+        if keys[1]:
+             playerpos[0] -= 10
+        elif keys[3]:
+             playerpos[0] += 10
+
+        if event.type==pygame.MOUSEBUTTONDOWN:
+            shoot.play
+            position=pygame.mouse.get_pos()
+            acc[1]+=1
+            arrows.append([math.atan2(position[1]-(playerpos1[1]+32),position[0]-(playerpos1[0]+26)),playerpos1[0]+32,playerpos1[1]+32])
+
+
+#10 - Win/Lose check
+        if pygame.time.get_ticks()>=90000:
+           running=0
+           exitcode=1
+        if healthvalue<=0:
+           running=0
+           exitcode=0
+        if acc[1]!=0:
+           accuracy=acc[0]*1.0/acc[1]*100
+        else:
+           accuracy=0
+# 11 - Win/lose display        
+if exitcode==0:
+    pygame.font.init()
+    font = pygame.font.Font(None, 24)
+    text = font.render("Accuracy: "+str(accuracy)+"%", True, (255,0,0))
+    textRect = text.get_rect()
+    textRect.centerx = screen.get_rect().centerx
+    textRect.centery = screen.get_rect().centery+24
+    screen.blit(gameover, (0,0))
+    screen.blit(text, textRect)
+else:
+    pygame.font.init()
+    font = pygame.font.Font(None, 24)
+    text = font.render("Accuracy: "+str(accuracy)+"%", True, (0,255,0))
+    textRect = text.get_rect()
+    textRect.centerx = screen.get_rect().centerx
+    textRect.centery = screen.get_rect().centery+24
+    screen.blit(youwin, (0,0))
+    screen.blit(text, textRect)
+while 1:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit(0)
+    pygame.display.flip()
