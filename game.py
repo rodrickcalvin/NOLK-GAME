@@ -1,5 +1,7 @@
+#WAMALA RODRICK CALVIN /// 16/U/12277/PS
 #importing library
-#1
+
+
 import pygame
 from pygame.locals import *
 import math
