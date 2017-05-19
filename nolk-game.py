@@ -1,4 +1,6 @@
 #WAMALA RODRICK CALVIN   /// 16/U/12277/PS /// 216012196
+# MUGALU BEN WYCLIFF         16/U/636
+# WALAGA PRISCILLA N. EDITH 
 #importing library
 #1
 import pygame
