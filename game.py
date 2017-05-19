@@ -23,8 +23,8 @@ healthvalue=194
 #3    loading images
 gameover = pygame.image.load("gameover.png")
 youwin = pygame.image.load("youwin.png")
-player = pygame.image.load("main.png")
-grass = pygame.image.load("grass.png")
+player = pygame.image.load("main.jpg")
+grass = pygame.image.load("grass.jpg")
 castle = pygame.image.load("castle.png")
 arrow = pygame.image.load("bullet.png")
 badguyimg1=pygame.image.load("badguy.png")
