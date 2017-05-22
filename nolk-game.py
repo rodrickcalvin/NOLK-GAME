@@ -3,12 +3,13 @@
 # MUGALU BEN WYCLIFF         16/U/636
 # WALAGA PRISCILLA N. EDITH  16/U/12253/PS
 # MUGERWA MICHEAL JORDAN     16/U/640
+
 #importing library
-#1
 import pygame
 from pygame.locals import *
 import math
 import random
+
 #2  initializing the game
 pygame.init()
 width, height = 640, 480
@@ -21,6 +22,7 @@ badtimer=100
 badtimer1=0
 badguys=[[640,100]]
 healthvalue=194
+
 #3    loading images
 gameover = pygame.image.load("gameover.png")
 youwin = pygame.image.load("youwin.png")
@@ -43,6 +45,7 @@ shoot.set_volume(0.05)
 pygame.mixer.music.load('moonlight.wav')
 pygame.mixer.music.play(-1, 0.0)
 pygame.mixer.music.set_volume(0.25)
+
 #4   game loops
 running =1
 exitcode = 0
@@ -67,7 +70,7 @@ while running:
     playerpos1 = (playerpos[0] - playerrot.get_rect().width/2, playerpos[1] - playerrot.get_rect().height/2)
     screen.blit(playerrot, playerpos1)
 
-   #drawing arrows on screen
+   #drawing bullets on screen
     for bullet in arrows:
         index = 0
         velx = math.cos(bullet[0])*10
@@ -94,7 +97,7 @@ while running:
         if badguy[0]<-64:
                badguys.pop(index)
         badguy[0]-=7
-           # 6.3.1 - Attack castle
+           # 6.3.1 - Attack base
         badrect=pygame.Rect(badguyimg.get_rect())
         badrect.top=badguy[1]
         badrect.left=badguy[0]
